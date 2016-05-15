@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kotlin Web</title>
+    <script src="../jquery/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <h1 align="center">Welcome to Kotlin!</h1>
+    <h2 id="c1" align="center"></h2>
+    <h3 id="c2" align="center"></h3>
+    <h4 id="c3" align="center"></h4>
+</body>
+</html>
+<script type="application/javascript">
+    $.ajax({
+       type:'GET',
+       url:'../kotlin',
+       success:function (data) {
+           $("#c1").text(data.kotlin);
+           $("#c2").text(data.map.one + " " + data.map.two + " " + data.map.three);
+           $("#c3").text("id=" + data.person.id + " name=" + data.person.name);
+       }
+    });
+</script>
